@@ -22,18 +22,22 @@ namespace VersionChanger
             foreach (var path in filePaths)
             {
                 projectDropdown.Items.Add(path);
-                SetVersion("1.0", path);
             }
         }
 
         private void projectDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             var path = projectDropdown.Items[projectDropdown.SelectedIndex];
-            oldVersionInput.Text = GetCurrentVersion((string)path);
+            oldVersionInput.Text = GetCurrentVersion(path as string);
         }
 
         private string GetCurrentVersion(string csProjFile)
         {
+            if (csProjFile == null)
+            {
+                return string.Empty;
+            }
+
             var document = XDocument.Load(csProjFile);
             var projectNode = document.Element("Project");
 
