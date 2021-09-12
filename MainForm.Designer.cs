@@ -48,6 +48,7 @@
             this.projectDropdown.Name = "projectDropdown";
             this.projectDropdown.Size = new System.Drawing.Size(380, 21);
             this.projectDropdown.TabIndex = 0;
+            this.projectDropdown.SelectedIndexChanged += new System.EventHandler(this.projectDropdown_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -102,6 +103,7 @@
             this.startButton.TabIndex = 6;
             this.startButton.Text = "Ну, поехали!";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // whatHappenedList
             // 
