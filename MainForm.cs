@@ -114,15 +114,7 @@ namespace VersionChanger
             elemVersion.SetValue(version);
             File.WriteAllText(csprojFile, document.ToString());
 
-            UpdateFormVersion(version);
-        }
-
-        private void UpdateFormVersion(string newVersion)
-        {
-            if (projectDropdown.Text != string.Empty)
-            {
-                oldVersionInput.Text = newVersion;
-            }
+            oldVersionInput.Text = version;
         }
     }
 }
